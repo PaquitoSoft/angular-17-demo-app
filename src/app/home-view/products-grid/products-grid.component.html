@@ -1,0 +1,17 @@
+<section class="products-grid">
+  <ul class="products-grid__list">
+    @for(product of products; track product.id) {
+      <li class="product">
+        <a [routerLink]="['/product', product.code]">
+          <div class="product__media">
+            <img [src]="product.gridImages[0]" [alt]="product.name">
+          </div>
+          <div class="product__info">
+            <p>{{ product.name }}</p>
+            <p class="product__price">{{ product.price }} EUR</p>
+          </div>
+        </a>
+      </li>
+    }
+  </ul>
+</section>

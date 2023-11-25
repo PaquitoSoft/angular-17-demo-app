@@ -1,0 +1,16 @@
+.collapsible-panel__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.collapsible-panel__toggler {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.collapsible-panel__content {
+  font-size: 14px;
+  line-height: 24px;
+}

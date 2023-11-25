@@ -1,0 +1,16 @@
+.app-button {
+  background-color: #000;
+  color: #fff;
+  padding: 12px 72px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.app-button:hover {
+  background-color: #2e57f3;
+}
+.app-button:active {
+  background-color: #6786fff9;
+}

@@ -1,0 +1,25 @@
+.product-gallery,
+.product-gallery__main-image img {
+  width: 100%;
+}
+
+img {
+  border-radius: 4px;
+}
+
+.product-gallery__thumbnails {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 24px;
+  gap: 12px;
+}
+
+.product-gallery__thumbnail {
+  cursor: pointer;
+  width: 100%;
+}
+
+.product-gallery__thumbnail--selected {
+  border: 1px solid #2e57f3;
+  padding: 2px;
+}

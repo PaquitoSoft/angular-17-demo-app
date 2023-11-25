@@ -1,0 +1,10 @@
+.root {
+  max-width: 1024px;
+  margin: auto;
+}
+
+main {
+  max-width: 980px;
+  margin: auto;
+  padding: 32px 0 48px 0;
+}

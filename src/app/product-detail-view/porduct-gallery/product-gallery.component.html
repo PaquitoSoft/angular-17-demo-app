@@ -1,0 +1,16 @@
+<section class="product-gallery">
+  <div class="product-gallery__main-image">
+    <img [src]="selectedImage" [alt]="product.name">
+  </div>
+  <div class="product-gallery__thumbnails">
+    @for(image of product.detailImages; track image) {
+      <img
+        class="product-gallery__thumbnail"
+        [class.product-gallery__thumbnail--selected]="isSelectedImage(image)"
+        [src]="image"
+        [alt]="product.name"
+        (click)="updateSelectedImage(image)"
+      >
+    }
+  </div>
+</section>

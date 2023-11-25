@@ -1,0 +1,15 @@
+<section class="related-products">
+  <h2>Recommended products</h2>
+  <div class="related-products__products-container">
+    @for(product of relatedProducts; track product.id) {
+      <div class="related-products__product">
+        <a>
+          <img
+            [src]="product.detailImages[0]"
+            [alt]="product.name"
+          />
+        </a>
+      </div>
+    }
+  </div>
+</section>

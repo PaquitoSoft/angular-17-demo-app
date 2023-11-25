@@ -1,0 +1,41 @@
+<div>
+  <div class="product-details">
+    <section class="product-details__media">
+      <product-gallery [product]="product" />
+    </section>
+
+    <section class="product-details__info">
+      <h1 class="product-details__name">{{ product.name }}</h1>
+      <p class="product-details__price">{{ product.price }} EUR</p>
+      <div class="product-details__size-selector">
+        <app-select-input label="Size" [options]="sizesSelectorOptions" />
+      </div>
+      <div class="product-details__add-to-cart">
+        <app-button text="Add to cart" />
+      </div>
+      <div class="product-details__extra-info">
+        <collapsible-panel title="PRODUCT INFO">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </collapsible-panel>
+        <app-divider />
+        <collapsible-panel title="SHIPPING POLICY">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </collapsible-panel>
+        <app-divider />
+        <collapsible-panel title="RETURNS & REFUNDS">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </collapsible-panel>
+      </div>
+    </section>
+  </div>
+
+  <section class="related-products">
+    <related-products [productId]="product.id" />
+  </section>
+</div>

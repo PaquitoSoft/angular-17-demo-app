@@ -1,0 +1,20 @@
+.products-grid__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.product a {
+  text-decoration: none;
+}
+
+.product__info {
+  margin-top: 8px;
+}
+
+.product__price {
+  color: #2e57f3;
+  font-style: italic;
+  margin-top: 4px;
+}

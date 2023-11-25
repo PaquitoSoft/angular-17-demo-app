@@ -1,0 +1,14 @@
+/* .app-label {
+  width: 100%;
+} */
+label {
+  display: block;
+  font-size: 14px;
+}
+
+select {
+  margin-top: 8px;
+  border-color: #c0c0c099;
+  padding: 8px;
+  width: 100%;
+}
