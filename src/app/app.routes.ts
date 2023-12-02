@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeViewComponent } from './home-view/home-view.component';
-import { ProductDetailViewComponent } from './product-detail-view/product-detail-view.component';
+import { ProductDetailViewComponent, productResolver } from './product-detail-view/product-detail-view.component';
 
 export const routes: Routes = [
   {
@@ -9,6 +9,9 @@ export const routes: Routes = [
   },
   {
     path: 'product/:code',
-    component: ProductDetailViewComponent
+    component: ProductDetailViewComponent,
+    resolve: {
+      product: productResolver
+    }
   }
 ];

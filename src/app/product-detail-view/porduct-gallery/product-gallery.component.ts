@@ -11,7 +11,7 @@ export class ProductGalleryComponent {
   @Input() product!: TProduct;
   selectedImage = '';
 
-  ngOnInit() {
+  ngOnChanges() {
     this.selectedImage = this.product.detailImages[0];
   }
 
@@ -20,11 +20,6 @@ export class ProductGalleryComponent {
   }
 
   isSelectedImage(imageUrl: string) {
-    // console.log({
-    //   selectedImage: this.selectedImage,
-    //   imageUrl,
-    //   isSelected: this.selectedImage === imageUrl,
-    // });
     return this.selectedImage === imageUrl;
   }
 }

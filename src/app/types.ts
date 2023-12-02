@@ -14,3 +14,16 @@ export type TProduct = {
   name: string;
   price: number;
 }
+
+export type TShopCartItem = {
+  id: string;
+  productId: string;
+  size: string;
+  units: number;
+}
+
+export type TShopCart = {
+  id: string;
+  items: TShopCartItem[];
+  totalUnits: number;
+}

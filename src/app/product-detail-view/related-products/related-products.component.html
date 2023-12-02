@@ -3,7 +3,7 @@
   <div class="related-products__products-container">
     @for(product of relatedProducts; track product.id) {
       <div class="related-products__product">
-        <a>
+        <a [routerLink]="['/product', product.code]">
           <img
             [src]="product.detailImages[0]"
             [alt]="product.name"

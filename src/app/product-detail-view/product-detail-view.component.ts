@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { TProduct } from '../types';
 import { ProductsService } from '../services/products.service';
 import { SelectInputComponent } from '../_shared/select-input/select-input.component';
@@ -9,6 +9,7 @@ import { CollapsiblePanelComponent } from '../_shared/collapsible-panel/collapsi
 import { DividerComponent } from '../_shared/divider/divider.component';
 import { ProductGalleryComponent } from './porduct-gallery/product-gallery.component';
 import { RelatedProductsComponent } from './related-products/related-products.component';
+import { ShopCartService } from '../services/shop-cart.service';
 
 @Component({
   selector: 'product-detail-view',
@@ -34,10 +35,38 @@ export class ProductDetailViewComponent {
     { value: 'm', name: 'M' },
     { value: 'l', name: 'L' },
     { value: 'xl', name: 'XL' },
-  ]
+  ];
+  selectedSize = this.sizesSelectorOptions[0].value;
 
-  constructor(productsService: ProductsService) {
-    const productCode = this.route.snapshot.paramMap.get('code')!;
-    this.product = productsService.getProductByCode(productCode);
+  constructor(
+    private activatedRouter: ActivatedRoute,
+    private shopCartService: ShopCartService
+  ) {}
+
+  ngOnInit() {
+    // const productCode = this.route.snapshot.paramMap.get('code')!;
+    // this.product = this.productsService.getProductByCode(productCode);
+    this.activatedRouter.data.subscribe(({ product }) => {
+      // console.log('Data received from the router loader:', { params });
+      this.product = product;
+    })
   }
+
+  // ngOnChanges() {
+  //   const productCode = this.route.snapshot.paramMap.get('code')!;
+  //   this.product = this.productsService.getProductByCode(productCode);
+  // }
+
+  onSizeSelect(selectedSize: string) {
+    this.selectedSize = selectedSize;
+  }
+
+  onAddProductToCart() {
+    this.shopCartService.addProductToCart(this.product.id, this.selectedSize);
+  }
+}
+
+export const productResolver = (route: ActivatedRouteSnapshot) => {
+  const productsService = inject(ProductsService);
+  return productsService.getProductByCode(route.paramMap.get('code')!);
 }

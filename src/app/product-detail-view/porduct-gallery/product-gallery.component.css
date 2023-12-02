@@ -20,6 +20,6 @@ img {
 }
 
 .product-gallery__thumbnail--selected {
-  border: 1px solid #2e57f3;
+  border: 1px solid #c0c0c099;
   padding: 2px;
 }
