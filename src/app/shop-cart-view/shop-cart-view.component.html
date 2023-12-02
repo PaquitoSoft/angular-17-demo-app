@@ -1,0 +1,30 @@
+<div class="shop-cart__header">
+  <div>Total Items: {{cart.totalUnits}}</div>
+  <div>Total Amount: {{totalAmount}}€</div>
+</div>
+
+<div class="shop-cart__items-container">
+  <ul class="shop-cart__items-grid">
+    @for(item of cart.items; track item.id) {
+      <li>
+        <img
+          class="shop-cart__item-image"
+          [src]="item.product.gridImages[0]"
+          [alt]="item.product.altName"
+        />
+        <div class="shop-cart__item-info">
+          <p>{{item.product.name}}</p>
+          <div class="shop-cart__item-data">
+            <p>Size: {{item.size}}</p>
+            <p>Price: {{item.units * item.product.price}}€</p>
+          </div>
+        </div>
+        <div class="shop-cart__item-actions">
+          <app-button text="Remove" />
+        </div>
+      </li>
+    } @empty {
+      <p>No items in cart</p>
+    }
+  </ul>
+</div>

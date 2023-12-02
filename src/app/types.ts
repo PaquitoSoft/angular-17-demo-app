@@ -18,6 +18,7 @@ export type TProduct = {
 export type TShopCartItem = {
   id: string;
   productId: string;
+  product: TProduct;
   size: string;
   units: number;
 }

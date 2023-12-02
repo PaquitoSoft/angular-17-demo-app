@@ -17,11 +17,15 @@ export class ProductsService {
     return products;
   }
 
-  getProductByCode(productCode: string): TProduct {
+  async getProductById(productId: string) {
+    return products.find(product => product.id === productId)!;
+  }
+
+  async getProductByCode(productCode: string) {
     return products.find(product => product.code === productCode)!;
   }
 
-  getRelatedProducts(): TProduct[] {
+  async getRelatedProducts() {
     const index = getRandomNumber(0, products.length - RELATED_PRODUCTS_COUNT);
     return products.slice(index, index + RELATED_PRODUCTS_COUNT);
   }

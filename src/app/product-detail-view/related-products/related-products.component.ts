@@ -16,7 +16,7 @@ export class RelatedProductsComponent {
 
   constructor(private productsService: ProductsService) {}
 
-  ngOnChanges() {
-    this.relatedProducts = this.productsService.getRelatedProducts();
+  async ngOnChanges() {
+    this.relatedProducts = await this.productsService.getRelatedProducts();
   }
 }

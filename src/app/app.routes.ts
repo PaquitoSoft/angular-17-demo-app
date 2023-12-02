@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeViewComponent } from './home-view/home-view.component';
 import { ProductDetailViewComponent, productResolver } from './product-detail-view/product-detail-view.component';
+import { ShopCartViewComponent } from './shop-cart-view/shop-cart-view.component';
 
 export const routes: Routes = [
   {
@@ -13,5 +14,9 @@ export const routes: Routes = [
     resolve: {
       product: productResolver
     }
+  },
+  {
+    path: 'cart',
+    component: ShopCartViewComponent,
   }
 ];

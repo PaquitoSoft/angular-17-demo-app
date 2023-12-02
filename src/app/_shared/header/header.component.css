@@ -14,13 +14,14 @@ header {
 }
 
 .mini-shop-cart {
-  position: relative;
+  position: static;
 }
 
 .mini-shop-cart__count {
   color: #fff;
-  position: absolute;
-  top: 10px;
-  left: 9px;
+  display: block;
+  position: relative;
+  top: -22px;
+  text-align: center;
   font-size: 12px;
 }
