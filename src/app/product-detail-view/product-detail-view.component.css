@@ -25,6 +25,11 @@
   font-style: italic;
 }
 
+.product-details__description {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
 .product-details__size-selector {
   margin-top: 48px;
 }
@@ -33,6 +38,6 @@
   margin-top: 24px;
 }
 
-.related-products {
-  margin-top: 64px;
+.product-details__v-spacer {
+  height: 72px;
 }

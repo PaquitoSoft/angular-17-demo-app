@@ -7,6 +7,10 @@
   font-weight: bold;
 }
 
+.shop-cart__items-container {
+  min-height: 600px;
+}
+
 .shop-cart__items-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

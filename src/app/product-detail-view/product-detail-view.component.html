@@ -7,6 +7,7 @@
     <section class="product-details__info">
       <h1 class="product-details__name">{{ product.name }}</h1>
       <p class="product-details__price">{{ product.price }} EUR</p>
+      <p class="product-details__description">{{product.description.text}}</p>
       <div class="product-details__size-selector">
         <app-select-input
           label="Size"
@@ -42,11 +43,11 @@
     </section>
   </div>
 
-  <section class="related-products">
-    @defer (on viewport) {
-      <related-products [productId]="product.id" />
-    } @placeholder {
-      <p>Related products are coming...</p>
-    }
-  </section>
+  <div class="product-details__v-spacer"></div>
+
+  @defer (on viewport) {
+    <related-products [productId]="product.id" />
+  } @placeholder {
+    <p>Related products are coming...</p>
+  }
 </div>

@@ -7,7 +7,7 @@ import { SelectInputComponent } from '../_shared/select-input/select-input.compo
 import { ButtonComponent } from '../_shared/button/button.component';
 import { CollapsiblePanelComponent } from '../_shared/collapsible-panel/collapsible-panel.component';
 import { DividerComponent } from '../_shared/divider/divider.component';
-import { ProductGalleryComponent } from './porduct-gallery/product-gallery.component';
+import { ProductGalleryComponent } from './product-gallery/product-gallery.component';
 import { RelatedProductsComponent } from './related-products/related-products.component';
 import { ShopCartService } from '../services/shop-cart.service';
 

@@ -7,20 +7,22 @@
   <ul class="shop-cart__items-grid">
     @for(item of cart.items; track item.id) {
       <li>
-        <img
-          class="shop-cart__item-image"
-          [src]="item.product.gridImages[0]"
-          [alt]="item.product.altName"
-        />
+        <a [routerLink]="['/product', item.product.code]">
+          <img
+            class="shop-cart__item-image"
+            [src]="item.product.gridImages[0]"
+            [alt]="item.product.altName"
+          />
+        </a>
         <div class="shop-cart__item-info">
           <p>{{item.product.name}}</p>
           <div class="shop-cart__item-data">
             <p>Size: {{item.size}}</p>
-            <p>Price: {{item.units * item.product.price}}€</p>
+            <p>Price (x{{item.units}}): {{item.units * item.product.price}}€</p>
           </div>
         </div>
         <div class="shop-cart__item-actions">
-          <app-button text="Remove" />
+          <app-button text="Remove" (onClickEvent)="onItemRemove(item.id)" />
         </div>
       </li>
     } @empty {
