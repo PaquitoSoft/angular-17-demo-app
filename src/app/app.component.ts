@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './_shared/header/header.component';
-import { FooterComponent } from './_shared/footer/footer.component';
 import { ShopCartService } from './services/shop-cart.service';
+import { HeaderComponent } from './components/_shared/header/header.component';
+import { FooterComponent } from './components/_shared/footer/footer.component';
 
 @Component({
   selector: 'app-root',

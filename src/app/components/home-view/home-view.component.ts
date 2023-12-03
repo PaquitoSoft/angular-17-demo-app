@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductsService } from '../services/products.service';
+import { ProductsService } from '../../services/products.service';
 import { ProductsGridComponent } from './products-grid/products-grid.component';
-import { TProduct } from '../types';
+import { TProduct } from '../../types';
 
 @Component({
   selector: 'app-home-view',

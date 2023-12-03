@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TProduct } from '../../types';
+import { TProduct } from '../../../types';
 
 @Component({
   selector: 'product-gallery',

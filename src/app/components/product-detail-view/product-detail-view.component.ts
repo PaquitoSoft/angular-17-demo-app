@@ -1,15 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
-import { TProduct } from '../types';
-import { ProductsService } from '../services/products.service';
+import { TProduct } from '../../types';
+import { ProductsService } from '../../services/products.service';
+import { ShopCartService } from '../../services/shop-cart.service';
 import { SelectInputComponent } from '../_shared/select-input/select-input.component';
 import { ButtonComponent } from '../_shared/button/button.component';
 import { CollapsiblePanelComponent } from '../_shared/collapsible-panel/collapsible-panel.component';
 import { DividerComponent } from '../_shared/divider/divider.component';
 import { ProductGalleryComponent } from './product-gallery/product-gallery.component';
 import { RelatedProductsComponent } from './related-products/related-products.component';
-import { ShopCartService } from '../services/shop-cart.service';
 
 @Component({
   selector: 'product-detail-view',

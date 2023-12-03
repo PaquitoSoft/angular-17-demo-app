@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TProduct } from '../../types';
+import { TProduct } from '../../../types';
 
 @Component({
   selector: 'products-grid',

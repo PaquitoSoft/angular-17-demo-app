@@ -1,6 +1,6 @@
 import { Component, computed, effect } from '@angular/core';
-import { TShopCart, TShopCartItem } from '../types';
-import { ShopCartService } from '../services/shop-cart.service';
+import { TShopCart, TShopCartItem } from '../../types';
+import { ShopCartService } from '../../services/shop-cart.service';
 import { ButtonComponent } from '../_shared/button/button.component';
 import { RouterLink } from '@angular/router';
 

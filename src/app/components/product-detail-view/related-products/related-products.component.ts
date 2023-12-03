@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TProduct } from '../../types';
-import { ProductsService } from '../../services/products.service';
+import { TProduct } from '../../../types';
+import { ProductsService } from '../../../services/products.service';
 
 @Component({
   selector: 'related-products',
