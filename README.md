@@ -1,27 +1,28 @@
-# Angular17DemoApp
+# Angular17 Demo App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.1.
+This PR implements a very basic client-side application to serve as a playground to fiddle around with Angular 17.
 
-## Development server
+Here are some helpful links:
+- [Angular v17 announcement](https://blog.angular.io/introducing-angular-v17-4d7033312e4b)
+- [Angular new docs](https://angular.dev/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Key features
 
-## Code scaffolding
+This is the list of the the features I find more interesting: (not all of them belong to `v17`)
+- New control flow directives: `@if` (`else`) and `@for` (`empty`)
+- Deferred content (`@defer` directive)
+- Router (scroll positioning; transitions)
+- Signals (`untracked()` helper)
+- Input and Output components props
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Things I found ackward
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Sometimes I need to restart the server for templates changes to take effect in the browser
+- When navigating from a product detail page to another detail page (related product), the URL was updating but the view content didn't
+  - I _solved_ it with a page data loader defined in the router
+- When navigating to a related product with a router data loader did not change the product galley main image
+	- I had to use the `ngOnChanges` lifecycle method to update the selected image state instead of `ngOnInit` one
+- Scroll didn't reset after soft navigation
+	- I used `withInMemoryScrolling` router provider but always navigates to top even when navigating back to the previous route
+- Signals require to be called within Components constructor and using the effect() function (there are exceptions)
+  - To not create a dependency to the Signal, you must use the `untracked(<signal>)` function
