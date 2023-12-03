@@ -4,11 +4,13 @@ import { provideRouter, withInMemoryScrolling, withViewTransitions } from '@angu
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(
-    routes,
-    withViewTransitions(),
-    withInMemoryScrolling({
-    scrollPositionRestoration: 'enabled'
-    })
-  )]
+  providers: [
+    provideRouter(
+      routes,
+      withViewTransitions(),
+      withInMemoryScrolling({
+      scrollPositionRestoration: 'enabled'
+      })
+    )
+  ]
 };
