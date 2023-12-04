@@ -11,7 +11,7 @@ Here are some helpful links:
 This is the list of the the features I find more interesting: (not all of them belong to `v17`)
 - New control flow directives: `@if` (`else`) and `@for` (`empty`)
 - Deferred content (`@defer` directive)
-- Router (scroll positioning; transitions)
+- Router (scroll positioning; [view transitions](https://developer.chrome.com/docs/web-platform/view-transitions/))
 - Signals (`untracked()` helper)
 - Input and Output components props
 
